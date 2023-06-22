@@ -6,9 +6,12 @@ abstract class HomeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+class HomeInitialEvent extends HomeEvent{}
 
 class WishlistButtonPressedEvent extends HomeEvent{}
 
 class CartButtonClickedEvent extends HomeEvent{}
+
 class NavigateToWishListPageEvent extends HomeEvent{}
+
 class NavigateToCartPageEvent extends HomeEvent{}
