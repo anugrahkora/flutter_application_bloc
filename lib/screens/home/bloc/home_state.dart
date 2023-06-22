@@ -2,24 +2,25 @@ part of 'home_bloc.dart';
 
 abstract class HomeState extends Equatable {
   const HomeState();
-  
+
   @override
   List<Object> get props => [];
 }
- 
-class HomeInitial extends HomeState {}
 
-class HomeLoading extends HomeState {}
+class HomeInitialState extends HomeState {}
 
-class HomeLoaded extends HomeState {}
+class HomeLoadingState extends HomeState {}
 
-class HomeError extends HomeState {}
+class HomeLoadedState extends HomeState {
+  final List<GroceryModel> groceryItems;
 
-abstract class HomeActionState extends HomeState{}
+  const HomeLoadedState({required this.groceryItems});
+}
 
-class NavigateToWishlistPageActionState extends HomeActionState{}
+class HomeErrorState extends HomeState {}
 
-class NavigateToCartActionPageState extends HomeActionState{}
+abstract class HomeActionState extends HomeState {}
 
+class NavigateToWishlistPageActionState extends HomeActionState {}
 
-
+class NavigateToCartActionPageState extends HomeActionState {}
